@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using TatlaCas.Asp.Domain.Models.Common;
 using TatlaCas.Asp.Domain.Repos;
 using TatlaCas.Asp.Domain.Resources;
-using TatlaCas.Asp.Domain.Utils;
 using Microsoft.AspNetCore.Mvc;
 using TatlaCas.Asp.Web.ViewModels;
+using TatlaCas.Asp.Domain;
 
 namespace TatlaCas.Asp.Web
 {

@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using TatlaCas.Asp.Domain.Resources;
-using TatlaCas.Asp.Utils.Utils;
+using TatlaCas.Asp.Utils.HtmlForms;
 
 namespace TatlaCas.Asp.Web.ViewModels
 {

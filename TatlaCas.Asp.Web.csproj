@@ -18,7 +18,8 @@
             <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
             <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
         </PackageReference>
-        <PackageReference Include="TatlaCas.AspCore.Domain" Version="1.0.1" />
+        <PackageReference Include="TatlaCas.AspCore.Domain" Version="1.0.2" />
+        <PackageReference Include="TatlaCas.AspCore.Utils" Version="1.0.4" />
     </ItemGroup>
 
 </Project>
