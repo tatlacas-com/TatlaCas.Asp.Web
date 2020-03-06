@@ -58,6 +58,9 @@ namespace TatlaCas.Asp.Web.ViewModels
                 if (property.GetCustomAttribute<ReadOnlyAttribute>() is { } readOnlyAttribute &&
                     readOnlyAttribute.IsReadOnly)
                     field.ReadOnly = "readonly";
+                if (property.GetCustomAttribute<TotalColumnsAttribute>() is { } totalColumnsAttribute &&
+                    totalColumnsAttribute.ColumnsCount > 1)
+                    field.TotalColumns = totalColumnsAttribute.ColumnsCount;
                 if (property.GetCustomAttribute<MinLengthAttribute>() is { } minLengthAttribute)
                     field.MinLength = minLengthAttribute.Length;
                 if (property.GetCustomAttribute<MaxLengthAttribute>() is { } maxLengthAttribute)
@@ -116,6 +119,7 @@ namespace TatlaCas.Asp.Web.ViewModels
         public bool ShowBottomDivider { get; set; }
         public int MinLength { get; set; } = -1;
         public int MaxLength { get; set; } = -1;
+        public int TotalColumns { get; set; } = 0;
     }
 
     public enum FieldTypes
