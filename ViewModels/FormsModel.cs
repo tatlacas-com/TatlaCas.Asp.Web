@@ -65,7 +65,8 @@ namespace TatlaCas.Asp.Web.ViewModels
                     field.MinLength = minLengthAttribute.Length;
                 if (property.GetCustomAttribute<MaxLengthAttribute>() is { } maxLengthAttribute)
                     field.MaxLength = maxLengthAttribute.Length;
-
+                field.IsLeftEmbedded = property.GetCustomAttribute<IsLeftEmbeddedAttribute>() is { };
+                field.HasRightEmbedded = property.GetCustomAttribute<HasRightEmbeddedAttribute>() is { };
                 if (property.GetCustomAttribute<EmailAddressAttribute>() != null)
                     field.FieldType = FieldTypes.Email;
                 else if (property.GetCustomAttribute<PhoneAttribute>() != null)
@@ -120,6 +121,8 @@ namespace TatlaCas.Asp.Web.ViewModels
         public int MinLength { get; set; } = -1;
         public int MaxLength { get; set; } = -1;
         public int TotalColumns { get; set; } = 0;
+        public bool IsLeftEmbedded { get; set; }
+        public bool HasRightEmbedded { get; set; }
     }
 
     public enum FieldTypes

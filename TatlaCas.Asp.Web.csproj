@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackageId>TatlaCas.AspCore.Web</PackageId>
-    <PackageVersion>1.0.4</PackageVersion>
+    <PackageVersion>1.0.5</PackageVersion>
     <Authors>TatlaCas</Authors>
     <Copyright>TatlaCas</Copyright>
     <Owners>TatlaCas</Owners>
