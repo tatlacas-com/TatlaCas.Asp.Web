@@ -2,8 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-    <PackageId>TatlaCas.AspCore.Web</PackageId>
-    <PackageVersion>1.0.6</PackageVersion>
+    <PackageId>TatlaCas.Asp.Core.Web</PackageId>
+    <PackageVersion>2.0.0</PackageVersion>
     <Authors>TatlaCas</Authors>
     <Copyright>TatlaCas</Copyright>
     <Owners>TatlaCas</Owners>
@@ -14,12 +14,8 @@
     <ItemGroup>
         <PackageReference Include="AutoMapper" Version="9.0.0" />
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
-        <PackageReference Include="Microsoft.AspNetCore.App">
-            <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
-            <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
-        </PackageReference>
-        <PackageReference Include="TatlaCas.AspCore.Domain" Version="1.0.2" />
-        <PackageReference Include="TatlaCas.AspCore.Utils" Version="1.0.6" />
+        <PackageReference Include="TatlaCas.Asp.Core.Domain" Version="2.0.0" />
+    <PackageReference Include="TatlaCas.Asp.Core.Utils" Version="2.0.0" />
     </ItemGroup>
 
 </Project>

@@ -11,9 +11,18 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  major: 2
+  minor: 0
 
 #The build has 3 seperate tasks run under 1 step
 steps:
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
+  inputs:
+    command: 'restore'
+    feedsToUse: 'select'
+    vstsFeed: 'TatlaCasFeed'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
@@ -21,7 +30,7 @@ steps:
     command: 'build'
     arguments: '--configuration $(buildConfiguration)'
     projects: '*.csproj'
-
+    versioningScheme: 'off'
 - task: DotNetCoreCLI@2
   displayName: "dotnet pack"
   inputs:
@@ -41,7 +50,7 @@ steps:
     command: 'push'
     feedsToUse: 'select'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'TatlaCas NuGet Gallery'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'TatlaCasFeed'
     versioningScheme: 'off'
     allowPackageConflicts: true
